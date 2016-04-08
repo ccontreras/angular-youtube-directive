@@ -1,0 +1,27 @@
+{
+  "name": "yt-directive",
+  "authors": [
+    "Cesar Contreras <ccdl15c@gmail.com>"
+  ],
+  "description": "A simple angular directive to embed youtube videos.",
+  "main": "",
+  "moduleType": [
+    "es6",
+    "node"
+  ],
+  "keywords": [
+    "angular",
+    "directive",
+    "youtube",
+    "video"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
