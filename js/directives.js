@@ -1,4 +1,7 @@
 angular.module('App.Directives', [])
+
+    // Simple directive to embed youtube videos.
+    ////////////////////////////////////////////////
     .directive('ytVideo', ['$sce', function ($sce) {
         return {
             restrict: 'E',

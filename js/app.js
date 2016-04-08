@@ -1,1 +1,1 @@
-angular.module('App', ['App.Directives']);
+angular.module('App', ['App.Directives', 'App.Services']);
