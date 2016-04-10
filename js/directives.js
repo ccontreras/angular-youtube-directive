@@ -2,6 +2,7 @@ angular.module('App.Directives', [])
 
     // Simple directive to embed youtube videos.
     ////////////////////////////////////////////////
+    
     .directive('ytVideo', ['$sce', function ($sce) {
         return {
             restrict: 'E',
@@ -17,7 +18,27 @@ angular.module('App.Directives', [])
             link: {
                 pre: function (scope, elem, attrs) {
                     scope.trustedUrl = $sce.trustAsResourceUrl(scope.url);
-                }
+                },
+            }
+        };
+    }])
+    
+    
+    // Counter.
+    .directive('counter', ['$timeout', function($interval) {
+        return {
+            restrict: 'EA',
+            scope: false,
+            template: '<span>{{count}}</span>',
+            link: function (scope, elem, attrs) {
+                var increment = (attrs.increment === undefined) ? 1 : parseInt(attrs.increment);
+                var count = 0;
+                
+                setInterval(function() {
+                    count += increment;
+                    scope.count = count;
+                    scope.$apply();
+                }, 1000);
             }
         };
     }]);
