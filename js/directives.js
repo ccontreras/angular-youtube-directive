@@ -25,7 +25,7 @@ angular.module('App.Directives', [])
     
     
     // Counter.
-    .directive('counter', ['$timeout', function($interval) {
+    .directive('counter', ['$interval', function($interval) {
         return {
             restrict: 'EA',
             scope: false,
@@ -34,10 +34,9 @@ angular.module('App.Directives', [])
                 var increment = (attrs.increment === undefined) ? 1 : parseInt(attrs.increment);
                 var count = 0;
                 
-                setInterval(function() {
+                $interval(function() {
                     count += increment;
                     scope.count = count;
-                    scope.$apply();
                 }, 1000);
             }
         };
